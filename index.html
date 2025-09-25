@@ -134,7 +134,28 @@
     #adminPage table{width:100%;border-collapse:collapse}
     #adminPage table td, #adminPage table th{padding:8px;border-bottom:1px solid rgba(0,0,0,0.05);vertical-align:middle}
     #adminPage .thumb{width:80px;height:56px;object-fit:cover;border-radius:6px}
-  </style>
+  @media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .container {
+    width: 95%;
+    margin: auto;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  h1, h2, h3, p {
+    text-align: center;
+  }
+}
+</style>
 </head>
 <body>
 
