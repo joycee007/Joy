@@ -318,24 +318,37 @@ body {
     align-self: flex-end; /* keep right side for cart/search */
   }
 }
-/* ---------- Mobile menu items in one line ---------- */
+/* ---------- Mobile layout fix ---------- */
 @media (max-width: 768px) {
-  nav.top-nav {
-    display: flex !important;       /* force menu items in one line */
-    flex-wrap: nowrap;              /* prevent wrapping */
-    justify-content: space-between; /* spread items evenly */
-    align-items: center;            /* align vertically */
-    width: 100%;
-    padding: 0 10px;                /* optional spacing */
+  /* Keep brand at top-left */
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
   }
 
+  /* Move hamburger below brand */
   .hamburger {
-    order: 1;   /* place hamburger at the end of the menu line */
+    display: block;
+    position: absolute;
+    top: 60px;   /* adjust distance from top (brand height) */
+    left: 10px;
+    z-index: 100;
+  }
+
+  /* Menu items in one line below hamburger */
+  nav.top-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 100px; /* adjust so it's below brand + hamburger */
+    gap: 10px;
   }
 
   nav.top-nav a {
     white-space: nowrap;
-    padding: 8px 6px;
   }
 }
 </style>
