@@ -293,23 +293,29 @@ body {
     margin-top: 40px;  /* adjust as needed */
   }
 }
-/* Move brand below menu icon on mobile */
+/* MOBILE: move logo below hamburger/menu icon */
 @media (max-width: 768px) {
-  .logo { 
-    order: 2;          /* place logo below menu icon in flex container */
-    font-size: 36px;   /* adjust size if needed */
-    margin-top: 8px;   /* some spacing below menu */
+  .header-inner {
+    display: flex;
+    flex-direction: column;   /* stack items vertically */
+    align-items: flex-start;  /* keep left-aligned */
+    gap: 4px;                 /* spacing between elements */
   }
 
   .hamburger {
-    order: 1;          /* menu icon stays on top */
+    order: 1;  /* top */
+    align-self: flex-start; /* left-align hamburger */
   }
 
-  .header-inner {
-    display: flex;
-    flex-direction: column; /* stack hamburger and logo vertically */
-    align-items: flex-start; /* keep them aligned left */
-    gap: 4px;               /* small spacing between them */
+  .logo {
+    order: 2;      /* below hamburger */
+    font-size: 36px; /* adjust size */
+    margin-top: 0;
+  }
+
+  .top-controls {
+    order: 3;      /* below logo */
+    align-self: flex-end; /* keep right side for cart/search */
   }
 }
 </style>
