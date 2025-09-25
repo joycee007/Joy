@@ -251,6 +251,33 @@ body {
     margin-top: 40px;  /* adjust as needed */
   }
 }
+/* ===== MOBILE FIX FOR TOP ICONS & BRAND ===== */
+@media (max-width: 768px) {
+  /* Move top controls (cart, profile, search) to top-right */
+  .top-controls {
+    position: absolute;
+    top: 8px;    
+    right: 10px; 
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  /* Move logo to top-left corner */
+  .logo {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 36px; 
+    z-index: 1000;
+  }
+
+  /* Push main navbar down to avoid overlapping */
+  nav.top-nav {
+    margin-top: 50px; 
+    flex-wrap: wrap;
+  }
+}
 </style>
 </head>
 <body>
