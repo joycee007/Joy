@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Joy — Handcrafted Christian Gifts</title>
+
+  <!-- SEO basics -->
+  <meta name="description" content="Joy — handcrafted Christian gifts, décor and accessories. Premium quality, lovingly made." />
+  <meta name="keywords" content="Christian gifts, Christmas decorations, candles, Bible, handmade" />
+  <meta name="author" content="Joy" />
+  <link rel="icon" href="data:,">
+
+  <!-- Calligraphy font for footer -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Base & background (soft fog) ---------- */
+    :root{
+      --accent:#e75480; /* vibrant pink */
+      --muted:#4b2e83;  /* deep purple */
+      --soft-pink:#ffd1dc;
+      --nav-white:#ffffff;
+      --card-bg: rgba(255,255,255,0.92);
+    }
+    html,body{height:100%;margin:0;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:#333;}
+    body{
+      background:
+        radial-gradient(circle at 12% 12%, rgba(255,182,193,0.16), transparent 40%),
+        radial-gradient(circle at 88% 88%, rgba(173,216,230,0.16), transparent 40%),
+        linear-gradient(135deg, rgba(255,182,193,0.03), rgba(173,216,230,0.03));
+      min-height:100vh;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ---------- Header & nav ---------- */
+    header{background:var(--nav-white);padding:18px 22px;box-shadow:0 3px 12px rgba(0,0,0,0.06);position:sticky;top:0;z-index:50;}
+    .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .logo{font-size:48px;font-weight:700;color:var(--accent);line-height:1}
+    /* top controls */
+    .top-controls{display:flex;align-items:center;gap:10px}
+    .icon-btn{background:transparent;border:1px solid transparent;padding:8px;border-radius:8px;cursor:pointer;font-weight:600}
+    .icon-btn:hover{background:#fff0f2;border-color:rgba(231,84,128,0.08)}
+    .cart-badge{background:var(--accent);color:#fff;border-radius:999px;padding:3px 7px;font-size:12px;margin-left:6px}
+    /* search box */
+    .search-wrap{display:flex;align-items:center;gap:8px;border-radius:10px;padding:6px 8px;background:#fafafa;border:1px solid rgba(0,0,0,0.03)}
+    .search-wrap input{border:0;background:transparent;outline:none;font-size:14px}
+
+    /* Top nav (Home, Products, About, Contact) - inline */
+    nav.top-nav{display:flex;align-items:center;gap:18px}
+    nav.top-nav a{color:#333;text-decoration:none;font-weight:600;padding:8px 6px}
+    nav.top-nav a:hover{color:var(--accent)}
+
+    /* Products dropdown */
+    .dropdown{position:relative}
+    .dropdown > a{display:inline-block}
+    .dropdown-menu{position:absolute;left:0;top:calc(100% + 8px);background:var(--card-bg);box-shadow:0 8px 24px rgba(0,0,0,0.08);border-radius:10px;padding:8px 0;display:none;min-width:220px}
+    .dropdown-menu a{display:block;padding:10px 18px;color:#333;text-decoration:none}
+    .dropdown-menu a:hover{background:#fff0f2;color:var(--accent)}
+    .dropdown:hover .dropdown-menu{display:block}
+
+    /* ---------- Sub-nav second bar (categories) ---------- */
+    .sub-nav{background:linear-gradient(90deg,#ffdde1,#ee9ca7);padding:10px 0;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+    .sub-nav a{margin:0 12px;color:#333;text-decoration:none;font-weight:600}
+    .sub-nav a:hover{color:var(--accent);text-decoration:underline}
+
+    /* ---------- Main container & hero ---------- */
+    .container{max-width:1200px;margin:28px auto;padding:0 20px}
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));padding:26px;border-radius:14px;margin-bottom:20px;display:flex;gap:20px;align-items:center;justify-content:space-between}
+    .hero .left{flex:2}
+    .hero h1{margin:0;font-size:28px;color:var(--muted)}
+    .hero p{margin:8px 0 0;color:#555}
+    .hero .cta{background:var(--accent);color:#fff;border:none;padding:10px 18px;border-radius:10px;cursor:pointer;font-weight:700}
+
+    /* ---------- Product grid ---------- */
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:18px}
+    .product{background:var(--card-bg);border-radius:14px;padding:16px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.06);transition:transform .22s,box-shadow .22s;position:relative}
+    .product:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.09)}
+    .product img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+    .product h3{margin:6px 0;color:var(--accent);font-size:16px}
+    .product p.price{font-weight:700;color:#333;margin:6px 0}
+    .product .actions{display:flex;justify-content:center;gap:8px;margin-top:10px}
+    .btn{border-radius:10px;padding:8px 12px;border:0;cursor:pointer;font-weight:700}
+    .btn-cart{background:#fff0f2;color:var(--muted);border:1px solid rgba(231,84,128,0.06)}
+    .btn-buy{background:var(--soft-pink);color:var(--muted)}
+    /* wishlist heart */
+    .wish{position:absolute;top:12px;right:12px;background:transparent;border:none;font-size:20px;cursor:pointer;opacity:0.9}
+    .wish.saved{color:var(--accent)}
+    .wish.not-saved{color:rgba(0,0,0,0.15)}
+
+    /* ---------- Small screens ---------- */
+    .mobile-only{display:none}
+    .desktop-only{display:inline-block}
+
+    /* ---------- Pages (hide/show) ---------- */
+    .page{display:none}
+
+    /* ---------- Testimonials ---------- */
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
+    .testimonial{background:var(--card-bg);padding:12px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.05)}
+
+    /* ---------- Footer with calligraphy ---------- */
+    footer{margin-top:30px;padding:30px 20px;background:transparent;text-align:center}
+    footer .callig{font-family:'Great Vibes',cursive;font-size:20px;color:var(--accent);margin-bottom:10px}
+    footer .links{font-size:13px;color:#6b6b6b;margin-top:8px}
+    footer .links a{color:inherit;text-decoration:none;margin:0 8px}
+    footer .small{font-size:12px;color:#888;margin-top:10px}
+
+    /* ---------- Responsive behavior ---------- */
+    @media (max-width:900px){
+      .logo{font-size:36px}
+      .desktop-only{display:none}
+      .mobile-only{display:inline-block}
+      .hero{flex-direction:column;align-items:flex-start}
+      .product img{height:150px}
+    }
+    @media (max-width:600px){
+      .products{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+      .top-controls .search-wrap{display:none}
+    }
+
+    /* Simple hamburger */
+    .hamburger{display:none;border:0;background:transparent;font-size:20px;cursor:pointer}
+    @media (max-width:900px){.hamburger{display:inline-block}}
+    .mobile-menu{display:none;position:absolute;left:0;top:68px;width:100%;background:var(--nav-white);box-shadow:0 12px 40px rgba(0,0,0,0.08);padding:12px 0}
+    .mobile-menu a{display:block;padding:10px 18px}
+    .mobile-menu.show{display:block}
+
+    /* ---------- Admin page (hidden by default) ---------- */
+    #adminPage{display:none;padding:20px;max-width:1100px;margin:28px auto;}
+    #adminPage .admin-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
+    #adminPage .card{background:var(--card-bg);padding:14px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+    #adminPage table{width:100%;border-collapse:collapse}
+    #adminPage table td, #adminPage table th{padding:8px;border-bottom:1px solid rgba(0,0,0,0.05);vertical-align:middle}
+    #adminPage .thumb{width:80px;height:56px;object-fit:cover;border-radius:6px}
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo">Joy 💖</div>
+
+        <!-- hamburger mobile -->
+        <button class="hamburger mobile-only" id="hambtn" aria-label="menu">☰</button>
+      </div>
+
+      <!-- Top nav links & controls -->
+      <div style="display:flex;align-items:center;gap:12px;width:auto;justify-content:flex-end">
+        <nav class="top-nav desktop-only" aria-label="main navigation">
+          <a href="#" onclick="showHome()">Home</a>
+
+          <!-- Products dropdown -->
+          <div class="dropdown" style="display:inline-block">
+            <a href="#">Products ▾</a>
+            <div class="dropdown-menu" role="menu">
+              <a href="#" onclick="filterCategory('Scrunchies & Bows')">Scrunchies & Bows</a>
+              <a href="#" onclick="filterCategory('Christmas Decorations')">Christmas Decorations</a>
+              <a href="#" onclick="filterCategory('Artificial Flowers')">Artificial Flowers</a>
+              <a href="#" onclick="filterCategory('Soap & Pearls')">Soap & Pearls</a>
+              <a href="#" onclick="filterCategory('Pouches & Tote Bags')">Pouches & Tote Bags</a>
+              <a href="#" onclick="filterCategory('Crochet & Home Decor')">Crochet & Home Decor</a>
+            </div>
+          </div>
+
+          <a href="#" onclick="showAbout()">About</a>
+          <a href="#" onclick="showContact()">Contact</a>
+        </nav>
+
+        <!-- Search -->
+        <div class="search-wrap desktop-only" style="margin-right:6px">
+          <input id="search-input" placeholder="Search products..." />
+          <button class="icon-btn" onclick="runSearch()">🔍</button>
+        </div>
+
+        <!-- Controls: cart, profile -->
+        <div class="top-controls">
+          <button class="icon-btn" onclick="showCart()" title="Cart">🛒 <span id="cart-count" class="cart-badge" style="display:none">0</span></button>
+          <button class="icon-btn" title="Profile">👤</button>
+          <!-- mobile quick search -->
+          <button class="icon-btn mobile-only" onclick="toggleSearchMobile()">🔎</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#" onclick="showHome()">Home</a>
+      <a href="#" onclick="toggleMobileProducts()">Products ▾</a>
+      <div id="mobileProducts" style="display:none;padding-left:12px">
+        <a href="#" onclick="filterCategory('Scrunchies & Bows')">Scrunchies & Bows</a>
+        <a href="#" onclick="filterCategory('Christmas Decorations')">Christmas Decorations</a>
+        <a href="#" onclick="filterCategory('Artificial Flowers')">Artificial Flowers</a>
+        <a href="#" onclick="filterCategory('Soap & Pearls')">Soap & Pearls</a>
+        <a href="#" onclick="filterCategory('Pouches & Tote Bags')">Pouches & Tote Bags</a>
+        <a href="#" onclick="filterCategory('Crochet & Home Decor')">Crochet & Home Decor</a>
+      </div>
+      <a href="#" onclick="showAbout()">About</a>
+      <a href="#" onclick="showContact()">Contact</a>
+      <a href="#" onclick="showCart()">Cart</a>
+    </div>
+  </header>
+
+  <!-- ========== SUB NAV (categories) ========== -->
+  <div class="sub-nav desktop-only">
+    <a href="#" onclick="filterCategory('Scrunchies & Bows')">Scrunchies & Bows</a>
+    <a href="#" onclick="filterCategory('Christmas Decorations')">Christmas Decorations</a>
+    <a href="#" onclick="filterCategory('Artificial Flowers')">Artificial Flowers</a>
+    <a href="#" onclick="filterCategory('Soap & Pearls')">Soap & Pearls</a>
+    <a href="#" onclick="filterCategory('Pouches & Tote Bags')">Pouches & Tote Bags</a>
+    <a href="#" onclick="filterCategory('Crochet & Home Decor')">Crochet & Home Decor</a>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="left">
+        <h1>Handcrafted Christian gifts & décor</h1>
+        <p>Explore premium, handcrafted products — designed with care for moments that matter.</p>
+      </div>
+      <div class="right">
+        <button class="cta" onclick="filterCategory('All')">Explore Collection</button>
+      </div>
+    </section>
+
+    <!-- Home / Products listing -->
+    <section id="homePage" class="page">
+      <h2>Featured & Trending</h2>
+      <div id="product-list" class="products" aria-live="polite"></div>
+    </section>
+
+    <!-- ========== ADMIN PAGE (will replace view when unlocked) ========== -->
+    <section id="adminPage" aria-hidden="true">
+      <!-- Admin UI (in Part 3 we'll populate this via JS). For safety it's left empty here,
+           so the shop layout is unchanged until you unlock admin. -->
+      <div class="admin-grid">
+        <div class="card">
+          <h3>Products (admin)</h3>
+          <div id="adminProductsContainer">Loading admin UI…</div>
+        </div>
+        <div class="card">
+          <h3>Manage</h3>
+          <div id="adminControls">Loading admin UI…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart page -->
+    <section id="cartPage" class="page">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p><strong>Total:</strong> <span id="cart-total">₹0</span></p>
+      <div style="margin-top:12px">
+        <button class="btn btn-buy" onclick="checkout()">Checkout via WhatsApp</button>
+      </div>
+    </section>
+
+    <!-- Checkout (brief confirmation) -->
+    <section id="checkoutPage" class="page">
+      <h2>Checkout</h2>
+      <div style="background:var(--card-bg);padding:18px;border-radius:10px;">
+        <p>You'll be redirected to WhatsApp with your order details. We will confirm and share payment instructions there.</p>
+        <button class="btn btn-buy" onclick="proceedWhatsApp()">Proceed to WhatsApp</button>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="aboutPage" class="page">
+      <h2>About Joy</h2>
+      <p style="color:#444;line-height:1.6">
+        Joy is a premium label for handcrafted Christian gifts and décor. Each piece is carefully designed and crafted to deliver timeless beauty,
+        thoughtful detail, and lasting quality. We blend traditional craftsmanship with contemporary aesthetics so every product becomes a meaningful keepsake.
+        Our focus is on elegant presentation, premium materials, and meticulous finishing — because beautiful moments deserve beautiful objects.
+      </p>
+      
+      <!-- Testimonials moved here -->
+  <section id="testimonials" style="margin-top:22px">
+    <h2>What customers say</h2>
+    <div class="testimonials" id="testimonials-list"></div>
+  </section>
+    </section>
+
+    <!-- Contact (WhatsApp preferred) -->
+    <section id="contactPage" class="page">
+      <h2>Contact</h2>
+      <p>Best way to reach us: <a href="https://wa.me/919284682227" target="_blank">Chat on WhatsApp</a></p>
+      <p>Email: <a href="mailto:joy@example.com">joy@example.com</a></p>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="callig">🌸 Explore handcrafted items made with love and care ✨</div>
+    <div class="links">
+      <a href="#" onclick="showFAQ()">FAQ</a> ·
+      <a href="#" onclick="showAbout()">About</a> ·
+      <a href="#" onclick="showContact()">Contact</a> ·
+      <a href="#" onclick="showHome()">Shop</a>
+    </div>
+    <div class="small">© <span id="year"></span> Joy — Free shipping on all orders</div>
+  </footer>
+
+  <!-- ========== FAQ Modal (simple section show) ========== -->
+  <div id="faqSection" style="display:none;position:fixed;right:14px;bottom:14px;background:var(--card-bg);padding:12px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.12);max-width:320px">
+    <strong>FAQ</strong>
+    <ul style="padding-left:16px;margin:8px 0 0 0">
+      <li>Shipping: Free on all orders.</li>
+      <li>Returns: Contact us within 7 days (we'll guide you via WhatsApp).</li>
+      <li>Payment: Currently via WhatsApp (manual UPI). Razorpay coming soon.</li>
+    </ul>
+    <div style="text-align:right;margin-top:8px">
+      <button onclick="document.getElementById('faqSection').style.display='none'">Close</button>
+    </div>
+  </div>
+
+  <!-- Part 2 (JS core) will be pasted here -->
+<script>
+  // ---------- INITIAL DATA ----------
+  const products = [
+    { id:1,name:"Floral Scrunchie Set",category:"Scrunchies & Bows",price:299,img:"https://via.placeholder.com/280x200?text=Scrunchie+1" },
+    { id:2,name:"Christmas Candle Decor",category:"Christmas Decorations",price:599,img:"https://via.placeholder.com/280x200?text=Candle" },
+    { id:3,name:"Artificial Rose Bouquet",category:"Artificial Flowers",price:799,img:"https://via.placeholder.com/280x200?text=Rose+Bouquet" },
+    { id:4,name:"Soap & Pearl Set",category:"Soap & Pearls",price:499,img:"https://via.placeholder.com/280x200?text=Soap+Pearl" },
+    { id:5,name:"Handmade Tote Bag",category:"Pouches & Tote Bags",price:399,img:"https://via.placeholder.com/280x200?text=Tote+Bag" },
+    { id:6,name:"Crochet Table Mat",category:"Crochet & Home Decor",price:299,img:"https://via.placeholder.com/280x200?text=Crochet+Mat" }
+  ];
+
+  const testimonials = [
+    { name:"Alice", msg:"Beautiful products and amazing quality!" },
+    { name:"John", msg:"Fast delivery and very well packed. Loved it!" },
+    { name:"Sophia", msg:"The gift I bought brought so much joy!" }
+  ];
+
+  let cart = [];
+  let wishlist = [];
+
+  // ---------- DOM ELEMENTS ----------
+  const productList = document.getElementById("product-list");
+  const cartCount = document.getElementById("cart-count");
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  const testimonialsList = document.getElementById("testimonials-list");
+
+  const pages = {
+    home: document.getElementById("homePage"),
+    about: document.getElementById("aboutPage"),
+    contact: document.getElementById("contactPage"),
+    cart: document.getElementById("cartPage"),
+    checkout: document.getElementById("checkoutPage"),
+    admin: document.getElementById("adminPage")
+  };
+
+  // ---------- RENDER FUNCTIONS ----------
+  function renderProducts(filter="All") {
+    productList.innerHTML = "";
+    const filtered = filter==="All" ? products : products.filter(p=>p.category===filter);
+    filtered.forEach(p=>{
+      const div = document.createElement("div");
+      div.className="product";
+      div.innerHTML = `
+        <button class="wish ${wishlist.includes(p.id)?'saved':'not-saved'}" onclick="toggleWish(${p.id})">♥</button>
+        <img src="${p.img}" alt="${p.name}" />
+        <h3>${p.name}</h3>
+        <p class="price">₹${p.price}</p>
+        <div class="actions">
+          <button class="btn btn-cart" onclick="addToCart(${p.id})">Add to Cart</button>
+          <button class="btn btn-buy" onclick="buyNow(${p.id})">Buy Now</button>
+        </div>
+      `;
+      productList.appendChild(div);
+    });
+  }
+
+  function renderTestimonials() {
+    testimonialsList.innerHTML="";
+    testimonials.forEach(t=>{
+      const div = document.createElement("div");
+      div.className="testimonial";
+      div.innerHTML=`<p>"${t.msg}"</p><strong>— ${t.name}</strong>`;
+      testimonialsList.appendChild(div);
+    });
+  }
+
+  function updateCartBadge() {
+    if(cart.length>0){
+      cartCount.style.display="inline-block";
+      cartCount.textContent=cart.length;
+    }else{
+      cartCount.style.display="none";
+    }
+  }
+
+  function renderCart() {
+    cartItems.innerHTML="";
+    let total=0;
+    cart.forEach(item=>{
+      const p = products.find(pr=>pr.id===item.id);
+      total+=p.price*item.qty;
+      const li = document.createElement("li");
+      li.innerHTML=`${p.name} x ${item.qty} - ₹${p.price*item.qty} <button onclick="removeFromCart(${p.id})">Remove</button>`;
+      cartItems.appendChild(li);
+    });
+    cartTotal.textContent="₹"+total;
+    updateCartBadge();
+  }
+
+  // ---------- CART ACTIONS ----------
+  function addToCart(id) {
+    const existing = cart.find(c=>c.id===id);
+    if(existing){
+      existing.qty+=1;
+    }else{
+      cart.push({id:id,qty:1});
+    }
+    renderCart();
+    alert("Added to cart!");
+  }
+
+  function removeFromCart(id) {
+    cart = cart.filter(c=>c.id!==id);
+    renderCart();
+  }
+
+  function buyNow(id) {
+    const existing = cart.find(c=>c.id===id);
+    if(!existing) cart.push({id:id,qty:1});
+    showCart();
+  }
+
+  function checkout() {
+    showPage("checkout");
+  }
+
+  function proceedWhatsApp() {
+    if(cart.length===0) { alert("Cart is empty!"); return; }
+    let msg="Hello! I'd like to place an order:\n";
+    cart.forEach(item=>{
+      const p = products.find(pr=>pr.id===item.id);
+      msg+=`- ${p.name} x ${item.qty} = ₹${p.price*item.qty}\n`;
+    });
+    const total = cart.reduce((acc,c)=>acc + products.find(p=>p.id===c.id).price*c.qty,0);
+    msg+=`Total: ₹${total}`;
+    const url = "https://wa.me/919284682227?text=" + encodeURIComponent(msg);
+    window.open(url,"_blank");
+  }
+
+  // ---------- WISHLIST ----------
+  function toggleWish(id) {
+    if(wishlist.includes(id)){
+      wishlist = wishlist.filter(w=>w!==id);
+    }else{
+      wishlist.push(id);
+    }
+    renderProducts();
+  }
+
+  // ---------- SEARCH & FILTER ----------
+  function runSearch() {
+    const val = document.getElementById("search-input").value.toLowerCase();
+    productList.innerHTML="";
+    const filtered = products.filter(p=>p.name.toLowerCase().includes(val));
+    filtered.forEach(p=>{
+      const div = document.createElement("div");
+      div.className="product";
+      div.innerHTML = `
+        <button class="wish ${wishlist.includes(p.id)?'saved':'not-saved'}" onclick="toggleWish(${p.id})">♥</button>
+        <img src="${p.img}" alt="${p.name}" />
+        <h3>${p.name}</h3>
+        <p class="price">₹${p.price}</p>
+        <div class="actions">
+          <button class="btn btn-cart" onclick="addToCart(${p.id})">Add to Cart</button>
+          <button class="btn btn-buy" onclick="buyNow(${p.id})">Buy Now</button>
+        </div>
+      `;
+      productList.appendChild(div);
+    });
+  }
+
+  function filterCategory(cat) {
+    showHome();
+    renderProducts(cat);
+  }
+
+  // ---------- PAGE SWITCHING ----------
+  function showPage(page) {
+    for(let k in pages){
+      pages[k].style.display="none";
+    }
+    pages[page].style.display="block";
+    if(page==="home") renderProducts();
+  }
+
+  function showHome(){ showPage("home"); }
+  function showAbout(){ showPage("about"); }
+  function showContact(){ showPage("contact"); }
+  function showCart(){ showPage("cart"); renderCart(); }
+
+  // ---------- MOBILE MENU ----------
+  const hambtn = document.getElementById("hambtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  hambtn.addEventListener("click",()=>{ mobileMenu.classList.toggle("show"); });
+
+  function toggleMobileProducts(){
+    const mp = document.getElementById("mobileProducts");
+    mp.style.display = mp.style.display==="block"?"none":"block";
+  }
+
+  function toggleSearchMobile(){
+    const inp = document.getElementById("search-input");
+    if(inp.style.display==="block") inp.style.display="none";
+    else inp.style.display="block";
+  }
+
+  // ---------- FAQ ----------
+  function showFAQ(){ document.getElementById("faqSection").style.display="block"; }
+
+  // ---------- INIT ----------
+  document.getElementById("year").textContent=new Date().getFullYear();
+  renderProducts();
+  renderTestimonials();
+</script>
+<!-- ========== ADMIN PANEL (FULL PAGE VERSION) ========== -->
+<div id="adminPanel" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;overflow:auto;
+    background:rgba(0,0,0,0.5);padding:40px;box-sizing:border-box;z-index:9999;">
+  <div style="background:var(--card-bg);padding:20px;border-radius:12px;max-width:800px;margin:0 auto;position:relative;">
+    <h2>Admin Panel</h2>
+    <button style="position:absolute;top:20px;right:20px;" onclick="closeAdmin()">❌ Close</button>
+
+    <!-- Products Management -->
+    <section style="margin-top:20px;">
+      <h3>Products</h3>
+      <div id="adminProductForm" style="margin-bottom:16px;">
+        <input type="hidden" id="editProdId">
+        <input type="text" id="adminName" placeholder="Product Name" style="width:30%;margin-right:6px;">
+        <input type="text" id="adminCategory" placeholder="Category" style="width:20%;margin-right:6px;">
+        <input type="number" id="adminPrice" placeholder="Price" style="width:15%;margin-right:6px;">
+        <input type="text" id="adminImg" placeholder="Image URL" style="width:25%;margin-right:6px;">
+        <button onclick="saveProduct()" class="btn btn-buy">Save</button>
+      </div>
+
+      <table border="1" cellpadding="6" cellspacing="0" style="width:100%;text-align:left;border-collapse:collapse;">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Image</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="adminProductList"></tbody>
+      </table>
+    </section>
+
+    <!-- Testimonials Management -->
+    <section style="margin-top:20px;">
+      <h3>Testimonials</h3>
+      <div id="adminTestimonialForm" style="margin-bottom:16px;">
+        <input type="hidden" id="editTestId">
+        <input type="text" id="adminTestName" placeholder="Customer Name" style="width:30%;margin-right:6px;">
+        <input type="text" id="adminTestMsg" placeholder="Message" style="width:50%;margin-right:6px;">
+        <button onclick="saveTestimonial()" class="btn btn-buy">Save</button>
+      </div>
+
+      <table border="1" cellpadding="6" cellspacing="0" style="width:100%;text-align:left;border-collapse:collapse;">
+        <thead>
+          <tr><th>Name</th><th>Message</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="adminTestList"></tbody>
+      </table>
+    </section>
+  </div>
+</div>
+
+<script>
+  let editingId = null;
+  let editingTestId = null;
+
+  // ---------- OPEN ADMIN ----------
+  document.addEventListener('keydown', function(e){
+    if(e.ctrlKey && e.key.toLowerCase()==='j'){
+      const pw = prompt("Enter Admin Password:");
+      if(pw==='CtrlJ123'){
+        document.getElementById('adminPanel').style.display='block';
+        renderAdminProducts();
+        renderAdminTestimonials();
+      } else alert('Incorrect password');
+    }
+  });
+
+  function closeAdmin(){
+    document.getElementById('adminPanel').style.display='none';
+    clearAdminProductForm();
+    clearAdminTestForm();
+  }
+
+  // ---------- PRODUCTS ----------
+  function renderAdminProducts(){
+    const tbody = document.getElementById('adminProductList');
+    tbody.innerHTML="";
+    products.forEach(p=>{
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${p.id}</td>
+        <td>${p.name}</td>
+        <td>${p.category}</td>
+        <td>₹${p.price}</td>
+        <td><img src="${p.img}" style="width:50px;height:30px;"></td>
+        <td>
+          <button onclick="editProduct(${p.id})">Edit</button>
+          <button onclick="deleteProduct(${p.id})">Delete</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function clearAdminProductForm(){
+    editingId = null;
+    document.getElementById('editProdId').value='';
+    document.getElementById('adminName').value='';
+    document.getElementById('adminCategory').value='';
+    document.getElementById('adminPrice').value='';
+    document.getElementById('adminImg').value='';
+  }
+
+  function editProduct(id){
+    const p = products.find(x=>x.id===id);
+    if(!p) return;
+    editingId=id;
+    document.getElementById('editProdId').value=id;
+    document.getElementById('adminName').value=p.name;
+    document.getElementById('adminCategory').value=p.category;
+    document.getElementById('adminPrice').value=p.price;
+    document.getElementById('adminImg').value=p.img;
+  }
+
+  function deleteProduct(id){
+    if(confirm("Delete this product?")){
+      const idx = products.findIndex(p=>p.id===id);
+      if(idx>-1){
+        products.splice(idx,1);
+        renderProducts();
+        renderAdminProducts();
+      }
+    }
+  }
+
+  function saveProduct(){
+    const name = document.getElementById('adminName').value.trim();
+    const category = document.getElementById('adminCategory').value.trim();
+    const price = parseFloat(document.getElementById('adminPrice').value);
+    const img = document.getElementById('adminImg').value.trim();
+    if(!name || !category || !price || !img){ alert("Fill all fields"); return; }
+
+    if(editingId){
+      const p = products.find(x=>x.id===editingId);
+      p.name=name; p.category=category; p.price=price; p.img=img;
+    }else{
+      const newId = Math.max(...products.map(p=>p.id))+1;
+      products.push({id:newId,name,category,price,img});
+    }
+    renderProducts();
+    renderAdminProducts();
+    clearAdminProductForm();
+  }
+
+  // ---------- TESTIMONIALS ----------
+  function renderAdminTestimonials(){
+    const tbody = document.getElementById('adminTestList');
+    tbody.innerHTML="";
+    testimonials.forEach((t,i)=>{
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${t.name}</td>
+        <td>${t.msg}</td>
+        <td>
+          <button onclick="editTestimonial(${i})">Edit</button>
+          <button onclick="deleteTestimonial(${i})">Delete</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function clearAdminTestForm(){
+    editingTestId=null;
+    document.getElementById('editTestId').value='';
+    document.getElementById('adminTestName').value='';
+    document.getElementById('adminTestMsg').value='';
+  }
+
+  function editTestimonial(idx){
+    editingTestId=idx;
+    const t = testimonials[idx];
+    document.getElementById('editTestId').value=idx;
+    document.getElementById('adminTestName').value=t.name;
+    document.getElementById('adminTestMsg').value=t.msg;
+  }
+
+  function deleteTestimonial(idx){
+    if(confirm("Delete this testimonial?")){
+      testimonials.splice(idx,1);
+      renderTestimonials();
+      renderAdminTestimonials();
+    }
+  }
+
+  function saveTestimonial(){
+    const name = document.getElementById('adminTestName').value.trim();
+    const msg = document.getElementById('adminTestMsg').value.trim();
+    if(!name || !msg){ alert("Fill all fields"); return; }
+
+    if(editingTestId!==null){
+      testimonials[editingTestId]={name,msg};
+    }else{
+      testimonials.push({name,msg});
+    }
+    renderTestimonials();
+    renderAdminTestimonials();
+    clearAdminTestForm();
+  }
+</script>
