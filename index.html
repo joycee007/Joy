@@ -318,6 +318,26 @@ body {
     align-self: flex-end; /* keep right side for cart/search */
   }
 }
+/* ---------- Mobile menu items in one line ---------- */
+@media (max-width: 768px) {
+  nav.top-nav {
+    display: flex !important;       /* force menu items in one line */
+    flex-wrap: nowrap;              /* prevent wrapping */
+    justify-content: space-between; /* spread items evenly */
+    align-items: center;            /* align vertically */
+    width: 100%;
+    padding: 0 10px;                /* optional spacing */
+  }
+
+  .hamburger {
+    order: 1;   /* place hamburger at the end of the menu line */
+  }
+
+  nav.top-nav a {
+    white-space: nowrap;
+    padding: 8px 6px;
+  }
+}
 </style>
 </head>
 <body>
