@@ -293,6 +293,25 @@ body {
     margin-top: 40px;  /* adjust as needed */
   }
 }
+/* Move brand below menu icon on mobile */
+@media (max-width: 768px) {
+  .logo { 
+    order: 2;          /* place logo below menu icon in flex container */
+    font-size: 36px;   /* adjust size if needed */
+    margin-top: 8px;   /* some spacing below menu */
+  }
+
+  .hamburger {
+    order: 1;          /* menu icon stays on top */
+  }
+
+  .header-inner {
+    display: flex;
+    flex-direction: column; /* stack hamburger and logo vertically */
+    align-items: flex-start; /* keep them aligned left */
+    gap: 4px;               /* small spacing between them */
+  }
+}
 </style>
 </head>
 <body>
