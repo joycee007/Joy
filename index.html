@@ -155,6 +155,58 @@
     text-align: center;
   }
 }
+/* ==== MOBILE & RESPONSIVE FIXES ==== */
+
+/* Prevent page from sliding sideways */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar brand/logo top-left */
+.navbar-brand, .brand {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Fix product dropdown menu */
+nav ul li {
+  position: relative;
+}
+nav ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background: white; /* match navbar background */
+  width: max-content;
+  z-index: 9999;
+}
+nav ul li:hover ul {
+  display: block;
+}
+
+/* Make navbar items wrap nicely on small screens */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  nav ul li ul {
+    position: static;
+    display: none; /* keep hidden until hover/tap */
+  }
+  nav ul li:hover ul {
+    display: block;
+  }
+}
 </style>
 </head>
 <body>
