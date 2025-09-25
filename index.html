@@ -351,6 +351,37 @@ body {
     white-space: nowrap;
   }
 }
+/* ===== MOBILE HEADER FIX (phones only) ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    display: flex;
+    flex-direction: column; /* stack logo, hamburger, menu */
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .hamburger {
+    display: block !important; /* make sure it's visible */
+    order: 2; /* move below logo */
+    position: relative; /* remove absolute positioning */
+    top: auto;
+    left: auto;
+    margin-left: 0;
+  }
+
+  nav.top-nav {
+    display: flex;
+    flex-wrap: nowrap;   /* keep all menu items in one line */
+    gap: 12px;
+    width: 100%;
+    order: 3; /* keep below hamburger */
+  }
+
+  .logo {
+    order: 1; /* keep at the top */
+    position: relative; /* remove absolute */
+  }
+}
 </style>
 </head>
 <body>
