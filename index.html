@@ -397,6 +397,20 @@ body {
     width: 100%;
   }
 }
+/* ===== MOBILE: Move hamburger below brand name ===== */
+@media (max-width: 768px) {
+  header .hamburger {
+    display: block;         /* ensure visible */
+    position: relative;     /* relative to flow, not overlapping brand */
+    top: 0;                 /* remove any previous offsets */
+    margin-top: 10px;       /* space below brand name */
+  }
+
+  header .header-inner {
+    flex-direction: column; /* stack brand and menu/hamburger vertically */
+    align-items: flex-start;
+  }
+}
 </style>
 </head>
 <body>
