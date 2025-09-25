@@ -218,6 +218,24 @@ body {
 * {
     box-sizing: border-box;
 }
+/* Mobile adjustments for navbar */
+@media (max-width: 768px) {
+    nav {
+        position: relative; /* make navbar a reference for absolute items */
+    }
+
+    nav .navbar-items {
+        position: absolute;
+        top: 5px;        /* moves items slightly above */
+        right: 10px;     /* moves items towards top-right corner */
+        display: flex;
+        gap: 10px;       /* spacing between cart, profile, search */
+    }
+
+    nav .brand {
+        margin-left: 0;  /* brand touches top-left corner */
+    }
+}
 </style>
 </head>
 <body>
