@@ -381,6 +381,47 @@ body {
     gap: 10px;
   }
 }
+/* ===== MOBILE: Hamburger below brand only ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    display: flex !important;
+    flex-direction: column !important;  
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+
+  .logo {
+    order: 1 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  .hamburger {
+    order: 2 !important;               
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin-left: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  nav.top-nav {
+    order: 3 !important;               
+    display: flex !important;
+    flex-wrap: nowrap !important;       
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .top-controls {
+    order: 4 !important;
+    align-self: flex-end !important;
+  }
+}
 </style>
 </head>
 <body>
