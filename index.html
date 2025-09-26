@@ -523,6 +523,38 @@ body {
     gap: 12px !important;
   }
 }
+/* ===== OVERRIDE: Hamburger below brand on mobile ===== */
+@media (max-width: 768px) {
+    .header-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+    }
+
+    .logo {
+        order: 1 !important;        /* logo stays at top */
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin-left: 10px !important;  /* brand slightly away from edge */
+    }
+
+    .hamburger {
+        order: 2 !important;        /* hamburger below logo */
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin-left: 10px !important; /* aligns with logo */
+        margin-top: 5px !important;   /* small space below logo */
+        display: block !important;    /* ensures visible */
+    }
+
+    .top-controls {
+        order: 3 !important;        /* cart/profile/search below hamburger */
+        align-self: flex-end !important;
+    }
+}
 </style>
 </head>
 <body>
