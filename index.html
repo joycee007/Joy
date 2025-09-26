@@ -483,6 +483,46 @@ body {
     gap: 10px !important;
   }
 }
+/* ===== SAFE MOBILE HAMBURGER FIX ===== */
+@media (max-width: 768px) {
+  /* Make header stack vertically */
+  .header-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  /* Logo stays top-left */
+  .logo {
+    position: relative !important;
+    order: 1 !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+  }
+
+  /* Hamburger below logo at top-left */
+  .hamburger {
+    display: block !important;
+    position: relative !important;
+    order: 2 !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    align-self: flex-start !important;
+    z-index: 1000 !important;
+  }
+
+  /* Push navbar/menu below hamburger */
+  nav.top-nav {
+    order: 3 !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+  }
+}
 </style>
 </head>
 <body>
