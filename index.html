@@ -350,6 +350,37 @@ body {
     position: relative; /* remove absolute */
   }
 }
+/* ===== MOBILE FIX: Hamburger below brand (phones only) ===== */
+@media (max-width: 768px) {
+  /* Stack header items vertically */
+  .header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Keep brand/logo at top */
+  .logo {
+    order: 1;
+    position: relative; /* removes any absolute offsets */
+    margin-bottom: 8px; /* space below logo */
+  }
+
+  /* Move hamburger below brand */
+  .hamburger {
+    order: 2;
+    position: relative; /* relative flow */
+    margin-bottom: 8px; /* optional spacing */
+  }
+
+  /* Menu stays below hamburger */
+  nav.top-nav {
+    order: 3;
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+}
 </style>
 </head>
 <body>
