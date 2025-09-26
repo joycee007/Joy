@@ -523,36 +523,22 @@ body {
     gap: 12px !important;
   }
 }
-/* ===== FINAL OVERRIDE: Hamburger below logo on mobile only ===== */
+/* FINAL OVERRIDE: Move hamburger below logo on mobile only */
 @media (max-width: 768px) {
-    /* Keep logo at top-left */
-    .logo {
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        z-index: 1000 !important;
-    }
-
-    /* Force hamburger directly below logo at top-left */
-    .hamburger {
-        display: block !important;
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        margin-top: 8px !important; /* adjust spacing below logo */
-        order: 2 !important;       /* stack below logo */
-        z-index: 1000 !important;
-    }
-
-    /* Stack nav items below hamburger, single line if possible */
-    nav.top-nav {
+    .header-inner {
         display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: flex-start !important;
-        gap: 10px !important;
-        margin-top: 8px !important; /* space below hamburger */
-        order: 3 !important;
-        width: 100% !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .hamburger {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin-top: 10px !important;
+        order: 2 !important;
+    }
+    .logo {
+        order: 1 !important;
     }
 }
 </style>
