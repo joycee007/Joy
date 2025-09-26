@@ -293,14 +293,6 @@ body {
     margin-top: 40px;  /* adjust as needed */
   }
 }
-/* MOBILE: move logo below hamburger/menu icon */
-@media (max-width: 768px) {
-  .header-inner {
-    display: flex;
-    flex-direction: column;   /* stack items vertically */
-    align-items: flex-start;  /* keep left-aligned */
-    gap: 4px;                 /* spacing between elements */
-  }
 
   .logo {
     order: 2;      /* below hamburger */
@@ -321,16 +313,6 @@ body {
     top: 10px;
     left: 10px;
     z-index: 100;
-  }
-
-  /* Menu items in one line below hamburger */
-  nav.top-nav {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 100px; /* adjust so it's below brand + hamburger */
-    gap: 10px;
   }
 
   nav.top-nav a {
