@@ -448,6 +448,41 @@ body {
     gap: 6px !important;  /* small space between items */
   }
 }
+/* ==== MOBILE FIX: FORCE HAMBURGER BELOW LOGO ==== */
+@media (max-width: 768px) {
+  header .header-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  header .logo {
+    order: 1 !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+  }
+
+  header .hamburger {
+    order: 2 !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    align-self: flex-start !important;
+    z-index: 1000 !important;
+    display: block !important;
+  }
+
+  nav.top-nav {
+    order: 3 !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+  }
+}
 </style>
 </head>
 <body>
