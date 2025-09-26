@@ -422,27 +422,28 @@ body {
     align-self: flex-end !important;
   }
 }
-/* ===== FINAL MOBILE HAMBURGER FIX ===== */
+/* ===== FINAL MOBILE HAMBURGER BELOW BRAND ===== */
 @media (max-width: 768px) {
   header .hamburger {
     display: block !important;
-    position: relative !important;
+    position: relative !important;  /* remove absolute positioning */
     top: auto !important;
     left: auto !important;
-    margin-top: 50px !important; /* space below brand name */
-    order: 2 !important;         /* make it below brand */
+    margin: 10px 0 0 0 !important;  /* space below brand */
+    order: 2 !important;            /* below logo in flex layout */
     z-index: 1000 !important;
   }
 
   header .logo {
     position: relative !important;
-    order: 1 !important; /* keep brand at top */
-    margin-top: 0 !important;
+    order: 1 !important;
   }
 
   header .header-inner {
-    flex-direction: column !important; /* stack logo and hamburger vertically */
+    display: flex !important;
+    flex-direction: column !important; /* stack logo and hamburger */
     align-items: flex-start !important;
+    gap: 6px !important;  /* small space between items */
   }
 }
 </style>
