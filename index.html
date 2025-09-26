@@ -424,15 +424,16 @@ body {
 }
 /* ===== FINAL MOBILE HAMBURGER BELOW BRAND ===== */
 @media (max-width: 768px) {
-  header .hamburger {
+header .hamburger {
     display: block !important;
-    position: relative !important;  /* remove absolute positioning */
+    position: relative !important;       
     top: auto !important;
     left: auto !important;
-    margin: 10px 0 0 0 !important;  /* space below brand */
-    order: 2 !important;            /* below logo in flex layout */
+    margin: 0 0 0 10px !important;       
+    order: 2 !important;                 
+    align-self: flex-start !important;   
     z-index: 1000 !important;
-  }
+}
 
   header .logo {
     position: relative !important;
