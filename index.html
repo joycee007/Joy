@@ -4,16 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Joy — Handcrafted Christian Gifts</title>
-
   <!-- SEO basics -->
   <meta name="description" content="Joy — handcrafted Christian gifts, décor and accessories. Premium quality, lovingly made." />
   <meta name="keywords" content="Christian gifts, Christmas decorations, candles, Bible, handmade" />
   <meta name="author" content="Joy" />
   <link rel="icon" href="data:,">
-
   <!-- Calligraphy font for footer -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
   <style>
     /* ---------- Base & background (soft fog) ---------- */
     :root{
@@ -33,7 +30,6 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
-
     /* ---------- Header & nav ---------- */
     header{background:var(--nav-white);padding:18px 22px;box-shadow:0 3px 12px rgba(0,0,0,0.06);position:sticky;top:0;z-index:50;}
     .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -46,12 +42,10 @@
     /* search box */
     .search-wrap{display:flex;align-items:center;gap:8px;border-radius:10px;padding:6px 8px;background:#fafafa;border:1px solid rgba(0,0,0,0.03)}
     .search-wrap input{border:0;background:transparent;outline:none;font-size:14px}
-
     /* Top nav (Home, Products, About, Contact) - inline */
     nav.top-nav{display:flex;align-items:center;gap:18px}
     nav.top-nav a{color:#333;text-decoration:none;font-weight:600;padding:8px 6px}
     nav.top-nav a:hover{color:var(--accent)}
-
     /* Products dropdown */
     .dropdown{position:relative}
     .dropdown > a{display:inline-block}
@@ -59,12 +53,10 @@
     .dropdown-menu a{display:block;padding:10px 18px;color:#333;text-decoration:none}
     .dropdown-menu a:hover{background:#fff0f2;color:var(--accent)}
     .dropdown:hover .dropdown-menu{display:block}
-
     /* ---------- Sub-nav second bar (categories) ---------- */
     .sub-nav{background:linear-gradient(90deg,#ffdde1,#ee9ca7);padding:10px 0;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
     .sub-nav a{margin:0 12px;color:#333;text-decoration:none;font-weight:600}
     .sub-nav a:hover{color:var(--accent);text-decoration:underline}
-
     /* ---------- Main container & hero ---------- */
     .container{max-width:1200px;margin:28px auto;padding:0 20px}
     .hero{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));padding:26px;border-radius:14px;margin-bottom:20px;display:flex;gap:20px;align-items:center;justify-content:space-between}
@@ -72,7 +64,6 @@
     .hero h1{margin:0;font-size:28px;color:var(--muted)}
     .hero p{margin:8px 0 0;color:#555}
     .hero .cta{background:var(--accent);color:#fff;border:none;padding:10px 18px;border-radius:10px;cursor:pointer;font-weight:700}
-
     /* ---------- Product grid ---------- */
     .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:18px}
     .product{background:var(--card-bg);border-radius:14px;padding:16px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.06);transition:transform .22s,box-shadow .22s;position:relative}
@@ -88,25 +79,20 @@
     .wish{position:absolute;top:12px;right:12px;background:transparent;border:none;font-size:20px;cursor:pointer;opacity:0.9}
     .wish.saved{color:var(--accent)}
     .wish.not-saved{color:rgba(0,0,0,0.15)}
-
     /* ---------- Small screens ---------- */
     .mobile-only{display:none}
     .desktop-only{display:inline-block}
-
     /* ---------- Pages (hide/show) ---------- */
     .page{display:none}
-
     /* ---------- Testimonials ---------- */
     .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
     .testimonial{background:var(--card-bg);padding:12px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.05)}
-
     /* ---------- Footer with calligraphy ---------- */
     footer{margin-top:30px;padding:30px 20px;background:transparent;text-align:center}
     footer .callig{font-family:'Great Vibes',cursive;font-size:20px;color:var(--accent);margin-bottom:10px}
     footer .links{font-size:13px;color:#6b6b6b;margin-top:8px}
     footer .links a{color:inherit;text-decoration:none;margin:0 8px}
     footer .small{font-size:12px;color:#888;margin-top:10px}
-
     /* ---------- Responsive behavior ---------- */
     @media (max-width:900px){
       .logo{font-size:36px}
@@ -119,14 +105,12 @@
       .products{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
       .top-controls .search-wrap{display:none}
     }
-
     /* Simple hamburger */
     .hamburger{display:none;border:0;background:transparent;font-size:20px;cursor:pointer}
     @media (max-width:900px){.hamburger{display:inline-block}}
     .mobile-menu{display:none;position:absolute;left:0;top:68px;width:100%;background:var(--nav-white);box-shadow:0 12px 40px rgba(0,0,0,0.08);padding:12px 0}
     .mobile-menu a{display:block;padding:10px 18px}
     .mobile-menu.show{display:block}
-
     /* ---------- Admin page (hidden by default) ---------- */
     #adminPage{display:none;padding:20px;max-width:1100px;margin:28px auto;}
     #adminPage .admin-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
@@ -139,31 +123,26 @@
     margin: 0;
     padding: 10px;
   }
-
   .container {
     width: 95%;
     margin: auto;
   }
-
   img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
   }
-
   h1, h2, h3, p {
     text-align: center;
   }
 }
 /* ==== MOBILE & RESPONSIVE FIXES ==== */
-
 /* Prevent page from sliding sideways */
 body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
-
 /* Navbar brand/logo top-left */
 .navbar-brand, .brand {
   margin: 0 !important;
@@ -172,7 +151,6 @@ body {
   top: 0;
   left: 0;
 }
-
 /* Fix product dropdown menu */
 nav ul li {
   position: relative;
@@ -189,7 +167,6 @@ nav ul li ul {
 nav ul li:hover ul {
   display: block;
 }
-
 /* Make navbar items wrap nicely on small screens */
 @media screen and (max-width: 768px) {
   nav ul {
@@ -213,12 +190,288 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-
 /* Make everything scale nicely on mobile */
 * {
     box-sizing: border-box;
 }
+/* Mobile adjustments for navbar */
+@media (max-width: 768px) {
+    nav {
+        position: relative; /* make navbar a reference for absolute items */
+    }
+    nav .navbar-items {
+        position: absolute;
+        top: 5px;        /* moves items slightly above */
+        right: 10px;     /* moves items towards top-right corner */
+        display: flex;
+        gap: 10px;       /* spacing between cart, profile, search */
+    }
+    nav .brand {
+        margin-left: 0;  /* brand touches top-left corner */
+    }
+}
+/* Only for small screens (phones) */
+@media (max-width: 768px) {
+  .top-icons {
+    position: absolute;
+    top: 5px;       /* adjust distance from top */
+    right: 10px;    /* adjust distance from right edge */
+    display: flex;
+    gap: 10px;      /* spacing between icons */
+  }
+  /* Optional: push main navbar slightly down to make space */
+  nav {
+    margin-top: 40px;  /* adjust as needed */
+  }
+}
+/* ===== MOBILE FIX FOR TOP ICONS & BRAND ===== */
+@media (max-width: 768px) {
+  /* Move top controls (cart, profile, search) to top-right */
+  .top-controls {
+    position: absolute;
+    top: 8px;    
+    right: 10px; 
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+  /* Move logo to top-left corner */
+  .logo {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 36px; 
+    z-index: 1000;
+  }
+  /* Push main navbar down to avoid overlapping */
+  nav.top-nav {
+    margin-top: 50px; 
+    flex-wrap: wrap;
+  }
+}
+/* Only for small screens (phones) */
+@media (max-width: 768px) {
+  .top-icons {
+    position: absolute;
+    top: 5px;       /* distance from top */
+    right: 10px;    /* distance from right edge */
+    display: flex;
+    gap: 10px;      /* spacing between icons */
+  }
+  /* Push main navbar slightly down to make space */
+  nav {
+    margin-top: 40px;  /* adjust as needed */
+  }
+}
+  .logo {
+    order: 2;      /* below hamburger */
+    font-size: 36px; /* adjust size */
+    margin-top: 0;
+  }
+  .top-controls {
+    order: 3;      /* below logo */
+    align-self: flex-end; /* keep right side for cart/search */
+  }
+}
+/* ---------- Mobile layout fix ---------- */
+@media (max-width: 768px) {
+  /* Keep brand at top-left */
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+  }
+  nav.top-nav a {
+    white-space: nowrap;
+  }
+}
+/* ===== MOBILE HEADER FIX (phones only) ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    display: flex;
+    flex-direction: column; /* stack logo, hamburger, menu */
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .hamburger {
+    display: block !important; /* make sure it's visible */
+    order: 2; /* move below logo */
+    position: relative; /* remove absolute positioning */
+    top: auto;
+    left: auto;
+    margin-left: 0;
+  }
+  nav.top-nav {
+    display: flex;
+    flex-wrap: nowrap;   /* keep all menu items in one line */
+    gap: 12px;
+    width: 100%;
+    order: 3; /* keep below hamburger */
+  }
+  .logo {
+    order: 1; /* keep at the top */
+    position: relative; /* remove absolute */
+  }
+}
+/* ===== MOBILE FIX: Hamburger below brand (phones only) ===== */
+@media (max-width: 768px) {
+  /* Stack header items vertically */
+  .header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* Keep brand/logo at top */
+  .logo {
+    order: 1;
+    position: relative; /* removes any absolute offsets */
+    margin-bottom: 8px; /* space below logo */
+  }
+  /* Move hamburger below brand */
+  .hamburger {
+    order: 2;
+    position: relative; /* relative flow */
+    margin-bottom: 8px; /* optional spacing */
+  }
+  /* Menu stays below hamburger */
+  nav.top-nav {
+    order: 3;
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+}
+/* ===== MOBILE: Hamburger below brand only ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    display: flex !important;
+    flex-direction: column !important;  
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .logo {
+    order: 1 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+  }
+  .hamburger {
+    order: 2 !important;               
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin-left: 0 !important;
+    z-index: 1000 !important;
+  }
+  nav.top-nav {
+    order: 3 !important;               
+    display: flex !important;
+    flex-wrap: nowrap !important;       
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .top-controls {
+    order: 4 !important;
+    align-self: flex-end !important;
+  }
+}
+/* ===== FINAL MOBILE HAMBURGER BELOW BRAND ===== */
+@media (max-width: 768px) {
+.hamburger {
+    display: block !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    align-self: flex-start !important;
+    order: 2 !important;
+    z-index: 1000 !important;
+}
 
+  header .logo {
+    position: relative !important;
+    order: 1 !important;
+  }
+  header .header-inner {
+    display: flex !important;
+    flex-direction: column !important; /* stack logo and hamburger */
+    align-items: flex-start !important;
+    gap: 6px !important;  /* small space between items */
+  }
+}
+/* ==== MOBILE FIX: FORCE HAMBURGER BELOW LOGO ==== */
+@media (max-width: 768px) {
+  header .header-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+  header .logo {
+    order: 1 !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+  }
+  header .hamburger {
+    order: 2 !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    align-self: flex-start !important;
+    z-index: 1000 !important;
+    display: block !important;
+  }
+  nav.top-nav {
+    order: 3 !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+  }
+}
+/* ===== SAFE MOBILE HAMBURGER FIX ===== */
+@media (max-width: 768px) {
+  /* Make header stack vertically */
+  .header-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  /* Logo stays top-left */
+  .logo {
+    position: relative !important;
+    order: 1 !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+  }
+  /* Hamburger below logo at top-left */
+  .hamburger {
+    display: block !important;
+    position: relative !important;
+    order: 2 !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    align-self: flex-start !important;
+    z-index: 1000 !important;
+  }
+  /* Push navbar/menu below hamburger */
+  nav.top-nav {
+    order: 3 !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+  }
+}
 /* FINAL OVERRIDE: Move hamburger below logo on mobile only */
 @media (max-width: 768px) {
     .header-inner {
@@ -237,62 +490,21 @@ body {
         order: 1 !important;
     }
 }
-/* ===== MOBILE HEADER FIX ===== */
-@media (max-width: 768px) {
-  /* Stack header items vertically */
-  .header-inner {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 6px !important;
-  }
-
-  /* Logo at top-left */
-  .logo {
-    order: 1 !important;
-    position: relative !important;
-    margin: 0 !important;
-    z-index: 1000 !important;
-  }
-
-  /* Hamburger below logo at top-right */
-  .hamburger {
-    order: 2 !important;
-    display: block !important;
-    position: relative !important;
-    margin: 0 !important;
-    align-self: flex-start !important; /* left-align if needed, change to flex-end for right */
-    z-index: 1000 !important;
-  }
-
-  /* Navbar / menu below hamburger */
-  nav.top-nav {
-    order: 3 !important;
-    width: 100% !important;
-    flex-wrap: nowrap !important;
-    gap: 12px !important;
-    margin-top: 8px !important;
-  }
-}
 </style>
 </head>
 <body>
-
   <!-- ========== HEADER ========== -->
   <header>
     <div class="header-inner">
       <div style="display:flex;align-items:center;gap:12px">
         <div class="logo">Joy 💖</div>
-
         <!-- hamburger mobile -->
         <button class="hamburger mobile-only" id="hambtn" aria-label="menu">☰</button>
       </div>
-
       <!-- Top nav links & controls -->
       <div style="display:flex;align-items:center;gap:12px;width:auto;justify-content:flex-end">
         <nav class="top-nav desktop-only" aria-label="main navigation">
           <a href="#" onclick="showHome()">Home</a>
-
           <!-- Products dropdown -->
           <div class="dropdown" style="display:inline-block">
             <a href="#">Products ▾</a>
@@ -305,17 +517,14 @@ body {
               <a href="#" onclick="filterCategory('Crochet & Home Decor')">Crochet & Home Decor</a>
             </div>
           </div>
-
           <a href="#" onclick="showAbout()">About</a>
           <a href="#" onclick="showContact()">Contact</a>
         </nav>
-
         <!-- Search -->
         <div class="search-wrap desktop-only" style="margin-right:6px">
           <input id="search-input" placeholder="Search products..." />
           <button class="icon-btn" onclick="runSearch()">🔍</button>
         </div>
-
         <!-- Controls: cart, profile -->
         <div class="top-controls">
           <button class="icon-btn" onclick="showCart()" title="Cart">🛒 <span id="cart-count" class="cart-badge" style="display:none">0</span></button>
@@ -325,7 +534,6 @@ body {
         </div>
       </div>
     </div>
-
     <!-- Mobile menu (hidden by default) -->
     <div id="mobileMenu" class="mobile-menu">
       <a href="#" onclick="showHome()">Home</a>
@@ -343,7 +551,6 @@ body {
       <a href="#" onclick="showCart()">Cart</a>
     </div>
   </header>
-
   <!-- ========== SUB NAV (categories) ========== -->
   <div class="sub-nav desktop-only">
     <a href="#" onclick="filterCategory('Scrunchies & Bows')">Scrunchies & Bows</a>
@@ -353,7 +560,6 @@ body {
     <a href="#" onclick="filterCategory('Pouches & Tote Bags')">Pouches & Tote Bags</a>
     <a href="#" onclick="filterCategory('Crochet & Home Decor')">Crochet & Home Decor</a>
   </div>
-
   <!-- ========== MAIN CONTENT ========== -->
   <main class="container">
     <!-- Hero -->
@@ -366,13 +572,11 @@ body {
         <button class="cta" onclick="filterCategory('All')">Explore Collection</button>
       </div>
     </section>
-
     <!-- Home / Products listing -->
     <section id="homePage" class="page">
       <h2>Featured & Trending</h2>
       <div id="product-list" class="products" aria-live="polite"></div>
     </section>
-
     <!-- ========== ADMIN PAGE (will replace view when unlocked) ========== -->
     <section id="adminPage" aria-hidden="true">
       <!-- Admin UI (in Part 3 we'll populate this via JS). For safety it's left empty here,
@@ -388,7 +592,6 @@ body {
         </div>
       </div>
     </section>
-
     <!-- Cart page -->
     <section id="cartPage" class="page">
       <h2>Your Cart</h2>
@@ -398,7 +601,6 @@ body {
         <button class="btn btn-buy" onclick="checkout()">Checkout via WhatsApp</button>
       </div>
     </section>
-
     <!-- Checkout (brief confirmation) -->
     <section id="checkoutPage" class="page">
       <h2>Checkout</h2>
@@ -407,7 +609,6 @@ body {
         <button class="btn btn-buy" onclick="proceedWhatsApp()">Proceed to WhatsApp</button>
       </div>
     </section>
-
     <!-- About -->
     <section id="aboutPage" class="page">
       <h2>About Joy</h2>
@@ -423,7 +624,6 @@ body {
     <div class="testimonials" id="testimonials-list"></div>
   </section>
     </section>
-
     <!-- Contact (WhatsApp preferred) -->
     <section id="contactPage" class="page">
       <h2>Contact</h2>
@@ -431,7 +631,6 @@ body {
       <p>Email: <a href="mailto:joyceepillay0007@gmail.com">joyceepillay0007@gmail.com</a></p>
     </section>
   </main>
-
   <!-- ========== FOOTER ========== -->
   <footer>
     <div class="callig">🌸 Explore handcrafted items made with love and care ✨</div>
@@ -443,7 +642,6 @@ body {
     </div>
     <div class="small">© <span id="year"></span> Joy — Free shipping on all orders</div>
   </footer>
-
   <!-- ========== FAQ Modal (simple section show) ========== -->
   <div id="faqSection" style="display:none;position:fixed;right:14px;bottom:14px;background:var(--card-bg);padding:12px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.12);max-width:320px">
     <strong>FAQ</strong>
@@ -456,7 +654,6 @@ body {
       <button onclick="document.getElementById('faqSection').style.display='none'">Close</button>
     </div>
   </div>
-
   <!-- Part 2 (JS core) will be pasted here -->
 <script>
   // ---------- INITIAL DATA ----------
@@ -468,23 +665,19 @@ body {
     { id:5,name:"Handmade Tote Bag",category:"Pouches & Tote Bags",price:399,img:"https://via.placeholder.com/280x200?text=Tote+Bag" },
     { id:6,name:"Crochet Table Mat",category:"Crochet & Home Decor",price:299,img:"https://via.placeholder.com/280x200?text=Crochet+Mat" }
   ];
-
   const testimonials = [
     { name:"Alice", msg:"Beautiful products and amazing quality!" },
     { name:"John", msg:"Fast delivery and very well packed. Loved it!" },
     { name:"Sophia", msg:"The gift I bought brought so much joy!" }
   ];
-
   let cart = [];
   let wishlist = [];
-
   // ---------- DOM ELEMENTS ----------
   const productList = document.getElementById("product-list");
   const cartCount = document.getElementById("cart-count");
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
   const testimonialsList = document.getElementById("testimonials-list");
-
   const pages = {
     home: document.getElementById("homePage"),
     about: document.getElementById("aboutPage"),
@@ -493,7 +686,6 @@ body {
     checkout: document.getElementById("checkoutPage"),
     admin: document.getElementById("adminPage")
   };
-
   // ---------- RENDER FUNCTIONS ----------
   function renderProducts(filter="All") {
     productList.innerHTML = "";
@@ -514,7 +706,6 @@ body {
       productList.appendChild(div);
     });
   }
-
   function renderTestimonials() {
     testimonialsList.innerHTML="";
     testimonials.forEach(t=>{
@@ -524,7 +715,6 @@ body {
       testimonialsList.appendChild(div);
     });
   }
-
   function updateCartBadge() {
     if(cart.length>0){
       cartCount.style.display="inline-block";
@@ -533,7 +723,6 @@ body {
       cartCount.style.display="none";
     }
   }
-
   function renderCart() {
     cartItems.innerHTML="";
     let total=0;
@@ -547,7 +736,6 @@ body {
     cartTotal.textContent="₹"+total;
     updateCartBadge();
   }
-
   // ---------- CART ACTIONS ----------
   function addToCart(id) {
     const existing = cart.find(c=>c.id===id);
@@ -559,22 +747,18 @@ body {
     renderCart();
     alert("Added to cart!");
   }
-
   function removeFromCart(id) {
     cart = cart.filter(c=>c.id!==id);
     renderCart();
   }
-
   function buyNow(id) {
     const existing = cart.find(c=>c.id===id);
     if(!existing) cart.push({id:id,qty:1});
     showCart();
   }
-
   function checkout() {
     showPage("checkout");
   }
-
   function proceedWhatsApp() {
     if(cart.length===0) { alert("Cart is empty!"); return; }
     let msg="Hello! I'd like to place an order:\n";
@@ -587,7 +771,6 @@ body {
     const url = "https://wa.me/919284682227?text=" + encodeURIComponent(msg);
     window.open(url,"_blank");
   }
-
   // ---------- WISHLIST ----------
   function toggleWish(id) {
     if(wishlist.includes(id)){
@@ -597,7 +780,6 @@ body {
     }
     renderProducts();
   }
-
   // ---------- SEARCH & FILTER ----------
   function runSearch() {
     const val = document.getElementById("search-input").value.toLowerCase();
@@ -619,12 +801,10 @@ body {
       productList.appendChild(div);
     });
   }
-
   function filterCategory(cat) {
     showHome();
     renderProducts(cat);
   }
-
   // ---------- PAGE SWITCHING ----------
   function showPage(page) {
     for(let k in pages){
@@ -633,31 +813,25 @@ body {
     pages[page].style.display="block";
     if(page==="home") renderProducts();
   }
-
   function showHome(){ showPage("home"); }
   function showAbout(){ showPage("about"); }
   function showContact(){ showPage("contact"); }
   function showCart(){ showPage("cart"); renderCart(); }
-
   // ---------- MOBILE MENU ----------
   const hambtn = document.getElementById("hambtn");
   const mobileMenu = document.getElementById("mobileMenu");
   hambtn.addEventListener("click",()=>{ mobileMenu.classList.toggle("show"); });
-
   function toggleMobileProducts(){
     const mp = document.getElementById("mobileProducts");
     mp.style.display = mp.style.display==="block"?"none":"block";
   }
-
   function toggleSearchMobile(){
     const inp = document.getElementById("search-input");
     if(inp.style.display==="block") inp.style.display="none";
     else inp.style.display="block";
   }
-
   // ---------- FAQ ----------
   function showFAQ(){ document.getElementById("faqSection").style.display="block"; }
-
   // ---------- INIT ----------
   document.getElementById("year").textContent=new Date().getFullYear();
   renderProducts();
@@ -669,7 +843,6 @@ body {
   <div style="background:var(--card-bg);padding:20px;border-radius:12px;max-width:800px;margin:0 auto;position:relative;">
     <h2>Admin Panel</h2>
     <button style="position:absolute;top:20px;right:20px;" onclick="closeAdmin()">❌ Close</button>
-
     <!-- Products Management -->
     <section style="margin-top:20px;">
       <h3>Products</h3>
@@ -681,7 +854,6 @@ body {
         <input type="text" id="adminImg" placeholder="Image URL" style="width:25%;margin-right:6px;">
         <button onclick="saveProduct()" class="btn btn-buy">Save</button>
       </div>
-
       <table border="1" cellpadding="6" cellspacing="0" style="width:100%;text-align:left;border-collapse:collapse;">
         <thead>
           <tr><th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Image</th><th>Actions</th></tr>
@@ -689,7 +861,6 @@ body {
         <tbody id="adminProductList"></tbody>
       </table>
     </section>
-
     <!-- Testimonials Management -->
     <section style="margin-top:20px;">
       <h3>Testimonials</h3>
@@ -699,7 +870,6 @@ body {
         <input type="text" id="adminTestMsg" placeholder="Message" style="width:50%;margin-right:6px;">
         <button onclick="saveTestimonial()" class="btn btn-buy">Save</button>
       </div>
-
       <table border="1" cellpadding="6" cellspacing="0" style="width:100%;text-align:left;border-collapse:collapse;">
         <thead>
           <tr><th>Name</th><th>Message</th><th>Actions</th></tr>
@@ -709,11 +879,9 @@ body {
     </section>
   </div>
 </div>
-
 <script>
   let editingId = null;
   let editingTestId = null;
-
   // ---------- OPEN ADMIN ----------
   document.addEventListener('keydown', function(e){
     if(e.ctrlKey && e.key.toLowerCase()==='j'){
@@ -725,13 +893,11 @@ body {
       } else alert('Incorrect password');
     }
   });
-
   function closeAdmin(){
     document.getElementById('adminPanel').style.display='none';
     clearAdminProductForm();
     clearAdminTestForm();
   }
-
   // ---------- PRODUCTS ----------
   function renderAdminProducts(){
     const tbody = document.getElementById('adminProductList');
@@ -752,7 +918,6 @@ body {
       tbody.appendChild(tr);
     });
   }
-
   function clearAdminProductForm(){
     editingId = null;
     document.getElementById('editProdId').value='';
@@ -761,7 +926,6 @@ body {
     document.getElementById('adminPrice').value='';
     document.getElementById('adminImg').value='';
   }
-
   function editProduct(id){
     const p = products.find(x=>x.id===id);
     if(!p) return;
@@ -772,7 +936,6 @@ body {
     document.getElementById('adminPrice').value=p.price;
     document.getElementById('adminImg').value=p.img;
   }
-
   function deleteProduct(id){
     if(confirm("Delete this product?")){
       const idx = products.findIndex(p=>p.id===id);
@@ -783,14 +946,12 @@ body {
       }
     }
   }
-
   function saveProduct(){
     const name = document.getElementById('adminName').value.trim();
     const category = document.getElementById('adminCategory').value.trim();
     const price = parseFloat(document.getElementById('adminPrice').value);
     const img = document.getElementById('adminImg').value.trim();
     if(!name || !category || !price || !img){ alert("Fill all fields"); return; }
-
     if(editingId){
       const p = products.find(x=>x.id===editingId);
       p.name=name; p.category=category; p.price=price; p.img=img;
@@ -802,7 +963,6 @@ body {
     renderAdminProducts();
     clearAdminProductForm();
   }
-
   // ---------- TESTIMONIALS ----------
   function renderAdminTestimonials(){
     const tbody = document.getElementById('adminTestList');
@@ -820,14 +980,12 @@ body {
       tbody.appendChild(tr);
     });
   }
-
   function clearAdminTestForm(){
     editingTestId=null;
     document.getElementById('editTestId').value='';
     document.getElementById('adminTestName').value='';
     document.getElementById('adminTestMsg').value='';
   }
-
   function editTestimonial(idx){
     editingTestId=idx;
     const t = testimonials[idx];
@@ -835,7 +993,6 @@ body {
     document.getElementById('adminTestName').value=t.name;
     document.getElementById('adminTestMsg').value=t.msg;
   }
-
   function deleteTestimonial(idx){
     if(confirm("Delete this testimonial?")){
       testimonials.splice(idx,1);
@@ -843,12 +1000,10 @@ body {
       renderAdminTestimonials();
     }
   }
-
   function saveTestimonial(){
     const name = document.getElementById('adminTestName').value.trim();
     const msg = document.getElementById('adminTestMsg').value.trim();
     if(!name || !msg){ alert("Fill all fields"); return; }
-
     if(editingTestId!==null){
       testimonials[editingTestId]={name,msg};
     }else{
