@@ -422,6 +422,29 @@ body {
     align-self: flex-end !important;
   }
 }
+/* ===== FINAL MOBILE HAMBURGER FIX ===== */
+@media (max-width: 768px) {
+  header .hamburger {
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin-top: 50px !important; /* space below brand name */
+    order: 2 !important;         /* make it below brand */
+    z-index: 1000 !important;
+  }
+
+  header .logo {
+    position: relative !important;
+    order: 1 !important; /* keep brand at top */
+    margin-top: 0 !important;
+  }
+
+  header .header-inner {
+    flex-direction: column !important; /* stack logo and hamburger vertically */
+    align-items: flex-start !important;
+  }
+}
 </style>
 </head>
 <body>
